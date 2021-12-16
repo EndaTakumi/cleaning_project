@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+    padding: 0;
+  }
+  #header {
+    border:solid 1.5px #000;
+    height: 60px;
+  }
+  ul {
+    list-style: none;
+  }
+  li { 
+    margin-bottom: 10px;
+    }
+

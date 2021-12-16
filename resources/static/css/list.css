@@ -43,3 +43,46 @@ td{
 #seven{
     background-color: #AAC4F2;
 }
+#lbl_infoId{
+    padding-top: 20px;
+    font-size: 10px;
+}
+
+#lbl_subjects{
+    padding-top: 20px;
+    font-size: 10px;
+}
+
+#lbl_contents{
+    padding-top: 20px;
+    font-size: 10px;
+}
+
+#lbl_infoPeriod{
+    padding-top: 20px;
+    font-size: 10px;
+}
+
+
+input#txt_subject{
+    width: 400px;
+}
+
+input#txt_contents{
+    width: 400px;
+    padding-bottom: 100px;
+    
+}
+
+input#date_infoFrom{
+    width: 188px;
+}
+
+input#date_infoTo{
+    width: 188px;
+}
+
+#btn_back{
+    color: #ffffff;
+    background-color: #0059F2;
+}
