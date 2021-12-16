@@ -1,3 +1,45 @@
 a{
-    color: #000;
+    color: #000000;
+}
+#tlbl_subject{
+    width: 200px;
+    text-align: left;
+}				
+#tlbl_infoId{
+    width: 100px;
+    text-align: left;
+}
+#tlbl_kaisaiPeriod{
+    width: 110px;
+    text-align: left;
+}
+th{
+    border-color: #0059F2;
+    background-color: #0059F2;
+    color: #ffffff;
+   padding-bottom: 15px;
+}
+td{
+    padding-bottom: 15px;
+}
+#one{
+    background-color: #AAC4F2;
+}
+#two{
+    background-color: #DAE3F2;
+}
+#three{
+    background-color: #AAC4F2;
+}
+#four{
+    background-color: #DAE3F2;
+}
+#five{
+    background-color: #AAC4F2;
+}
+#six{
+    background-color: #DAE3F2;
+}
+#seven{
+    background-color: #AAC4F2;
 }
