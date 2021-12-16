@@ -103,3 +103,20 @@ delete_flg VARCHAR2(1)
 );
 /*メッセージシークエンス*/
 create sequence seq_id nocache;
+
+/*履歴詳細テーブル*/
+create table HISTDATAIL(
+hist_id NUMBER REFERENCES HIST(hist_id),
+goods_id NUMBER REFERENCES GOODS(goods_id),
+count NUMBER,
+price NUMBER,
+PRIMARY KEY(hist_id, goods_id)
+);
+
+/*顧客テーブルにレコードを手打ち*/
+insert into customer values(seq_customer.nextval, '田中', '一郎', 'タナカ', 'イチロウ', '1111', '111', '1111', '東京都', '0');
+insert into customer values(seq_customer.nextval, '松本', '二郎', 'マツモト', 'ジロウ', '2222', '222', '2222', '愛知県', '0');
+insert into customer values(seq_customer.nextval, '佐藤', '三郎', 'サトウ', 'サブロウ', '3333', '333', '3333', '京都府', '0');
+insert into customer values(seq_customer.nextval, '小林', '四郎', 'コバヤシ', 'シロウ', '4444', '444', '4444', '大阪府', '0');
+insert into customer values(seq_customer.nextval, 'ジョン', '万次郎', 'ジョン', 'マンジロウ', '5555', '555', '5555', '沖縄県', '0');
+
