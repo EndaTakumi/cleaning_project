@@ -1,0 +1,62 @@
+body{
+	background-color: #333c5e;
+}
+/* ---- ボタン全般 ---- */
+input[type=submit] {
+	border-width: 1px;
+	border-style: solid;
+	padding: 9px 30px;
+	margin:10px;
+	border-radius: 6px;
+
+}
+.btn_login{
+	background-color: blue;
+	color: white;
+}
+/* ---------------------------------------------------------------- *
+コンテンツコンテナの設定
+* ---------------------------------------------------------------- */
+.content {
+height: 350px;
+width: 450px;
+position: absolute;
+left: 50%;
+top: 50%;
+margin-top: -150px;
+margin-left: -150px;
+background-color: white;
+text-align: center;
+}
+.lbl_title{
+	padding: 10px;
+}
+.lbl_userId{
+	margin-right: 150px;
+	font-size: small;
+	color: #cccccc;
+
+}
+.lbl_userpw{
+	margin-right: 140px;
+	font-size: small;
+
+}
+.txt_userpw{
+	padding: 0px 1px;
+	margin: 0px;
+}
+input.txt_userId{
+	width: 200px;
+	height: 24px;
+	margin: 5px;
+}
+
+input.txt_userpw{
+	width: 200px;
+	height: 28px;
+	margin:5px
+}
+.lbl_errormsg{
+	color: red;
+}
