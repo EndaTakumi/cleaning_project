@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<!--<link rel="stylesheet" th:href="@{/css/list.css}">-->
+        <link rel="stylesheet" href="../static/css/list.css">
+	</head>
+	<body>
+            <div id = "lbl_infoId">お知らせID</div>
+            <input type="text" name="#"  id="txt_infoId" value = "1" disabled />
+            </div>
+
+            <div id = "lbl_subjects">件名</div>
+            <input type="text" name ="#" id=txt_subject value="セールやるよ"disabled/>
+
+            <div id = "lbl_contents">内容</div>
+            <input type="textarea" name = "#" id=txt_contents value="2021/12/01～2021/12/31の間セールやりまーす" disabled/>
+
+            <div id = "lbl_infoPeriod">掲載期間</div>
+            <input type = "date" name="#" id="date_infoFrom" value="2021-11-01" disabled/>
+            <span>~</span>
+            <input type = "date" name="#" id="date_infoTo" value="2021-12-31" disabled/>
+
+            
+            <div id = button></div>
+            <input type = "button" name "#" id=btn_back value="戻る" />
+    </body>
