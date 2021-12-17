@@ -1,0 +1,95 @@
+body {
+    width: 300px;
+    border:1.5px solid #000;/* 枠線 */
+    box-sizing:border-box;
+}
+h3{
+    border-bottom:solid 1.5px #000 ; 
+    margin-top: 0px;
+    
+}
+#one{
+    background-color: #AAC4F2;
+}
+#two{
+    background-color: #DAE3F2;
+}
+#three{
+    background-color: #AAC4F2;
+}
+#four{
+    background-color: #DAE3F2;
+}
+#five{
+    background-color: #AAC4F2;
+}
+#six{
+    background-color: #DAE3F2;
+}
+#seven{
+    background-color: #AAC4F2;
+}
+#eight{
+    background-color: #DAE3F2;
+}
+#tlbl_custId{
+    width: 70px;
+    text-align: left;
+    
+}
+#tlbl_custNm{
+    width: 140px;
+    text-align: left;
+}
+th{
+    border-color: #0059F2;
+    background-color: #0059F2;
+    color: #ffffff;
+}
+#lbl_custNm{
+    font-size: small;
+    margin-left: 20px;
+}
+#lbl_tellNo{
+    font-size: small;
+    margin-left: 20px;
+}
+#txt_custNm{
+    margin-left: 20px;
+    height: 18px;
+}
+#txt_tellNo{
+    margin-bottom: 30px;
+    margin-right: 20px;
+    margin-left: 20px;
+    height: 18px;
+}
+#btn_search{
+    width: 50px;
+    height: 30px;
+    color: #ffffff;
+    background-color: #0059F2;
+    border-color: #0059F2;
+}
+#btn_close{
+    width: 80px;
+    margin-top: 15px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color: #0059F2;
+    border-color: #0059F2;
+    color: #ffffff;
+}
+#btn_set{
+    width:80px;
+    margin-left: 70px;
+    padding: 5px;
+    background-color: #0059F2;
+    border-color: #0059F2;
+    color: #ffffff;
+}
+table{
+    margin-left: 20px;
+    border-color: #ffffff;
+}

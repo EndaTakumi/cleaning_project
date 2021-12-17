@@ -1,0 +1,78 @@
+table{
+    border: #ffffff;
+}
+th{
+    border-color: #0059F2;
+    background-color: #0059F2;
+    color: #ffffff;
+    padding-bottom: 10px;
+}
+td{
+    padding-bottom: 10px;
+}
+input#btn_search{
+    color: #ffffff;
+    background-color: #0059f2;
+    width: 50px;
+}
+#lbl_custNm{
+   display:inline-block;
+}
+select{
+    width: 60px;
+    margin-left:10px;
+}
+#tlbl_goodsNm{
+    width: 200px;
+    text-align: left;
+}
+#tlbl_price{
+    width: 70px;
+    text-align: left;
+}
+#tlbl_count{
+    width: 90px;
+    text-align: left;
+}
+#one{
+    background-color: #AAC4F2;
+}
+#two{
+    background-color: #DAE3F2;
+}
+#three{
+    background-color: #AAC4F2;
+}
+#four{
+    background-color: #DAE3F2;
+}
+#five{
+    background-color: #AAC4F2;
+}
+#six{
+    background-color: #DAE3F2;
+}
+#seven{
+    background-color: #AAC4F2;
+}
+#button{
+    border-bottom: solid 1.5px #000;
+    padding-top: 20px
+}
+
+#btn_reset{
+    margin-left: 10px;
+    margin-top: 20px;
+    margin-right: 40px;
+    width: 90px;
+    height: 30px;
+    color: #ffffff;
+    background-color: #0059F2;
+}
+
+#btn_confirm{
+    width: 90px;
+    height: 30px;
+    background-color: #0059F2;
+    color: #ffffff;
+}
