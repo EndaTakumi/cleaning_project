@@ -120,3 +120,47 @@ insert into customer values(seq_customer.nextval, '²“¡', 'O˜Y', 'ƒTƒgƒE', 'ƒTƒ
 insert into customer values(seq_customer.nextval, '¬—Ñ', 'l˜Y', 'ƒRƒoƒ„ƒV', 'ƒVƒƒE', '4444', '444', '4444', '‘åã•{', '0');
 insert into customer values(seq_customer.nextval, 'ƒWƒ‡ƒ“', '–œŸ˜Y', 'ƒWƒ‡ƒ“', 'ƒ}ƒ“ƒWƒƒE', '5555', '555', '5555', '‰«“êŒ§', '0');
 
+/************************** ‚±‚±‚©‚ç‰º12/16XV ************************/
+/*ƒƒbƒZ[ƒWƒV[ƒNƒGƒ“ƒX*/
+create sequence seq_message nocache;
+/*•¶š”§ŒÀ‚ğ100‚É‚·‚é*/
+alter table message modify(
+msg VARCHAR2(100)
+);
+/*ƒƒbƒZ[ƒWƒe[ƒuƒ‹‚É‘Î‚µ‚ÄAƒŒƒR[ƒh‚ğè‘Å‚¿*/
+insert into message values(seq_message.nextval, 'MSG-01-001', '•K{“ü—Í‰ÓŠ‚Å‚·B', 0);
+insert into message values(seq_message.nextval, 'MSG-01-002', '“ü—Í‹K–ñ‚ÆˆÙ‚È‚Á‚Ä‚¢‚Ü‚·B', 0);
+insert into message values(seq_message.nextval, 'MSG-01-003', '“o˜^‚µ‚Ü‚·B‚æ‚ë‚µ‚¢‚Å‚·‚©H', 0);
+insert into message values(seq_message.nextval, 'MSG-01-004', 'íœ‚µ‚Ü‚·B‚æ‚ë‚µ‚¢‚Å‚·‚©H', 0);
+insert into message values(seq_message.nextval, 'MSG-01-005', 'ID‚©ƒpƒXƒ[ƒh‚ªˆÙ‚È‚è‚Ü‚·BÄ“x“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B', 0);
+insert into message values(seq_message.nextval, 'MSG-01-006', '³í‚É“o˜^‚Å‚«‚Ü‚µ‚½B', 0);
+insert into message values(seq_message.nextval, 'MSG-01-007', '“o˜^‚Å‚«‚Ü‚¹‚ñ‚Å‚µ‚½BÄ“x‚â‚è’¼‚·‚©AŠÇ—Ò‚Ö˜A—‚µ‚Ä‚­‚¾‚³‚¢B', 0);
+insert into message values(seq_message.nextval, 'MSG-01-008', '1“_‚Ì‚İ‘I‘ğ‚µ‚Ä‚­‚¾‚³‚¢B', 0);
+insert into message values(seq_message.nextval, 'MSG-01-009', '1“_ˆÈã‘I‘ğ‚µ‚Ä‚­‚¾‚³‚¢B', 0);
+insert into message values(seq_message.nextval, 'MSG-01-010', '“ü—Í•s”õ‚ª‚ ‚è‚Ü‚·B', 0);
+insert into message values(seq_message.nextval, 'MSG-01-011', '”ÍˆÍw’è‚ªˆÙ‚È‚Á‚Ä‚¢‚Ü‚·B', 0);
+insert into message values(seq_message.nextval, 'MSG-01-012', 'ŠúŠÔ‚ª‘¼‚Ì“o˜^‚Æd•¡‚µ‚Ä‚¢‚Ü‚·B', 0);
+
+/*Œ ŒÀƒe[ƒuƒ‹‚ÉƒŒƒR[ƒh‚ğ’Ç‰Á*/
+insert into authority values(seq_authority.nextval, 'ŠÇ—Ò', '0');
+insert into authority values(seq_authority.nextval, 'ˆê”ÊEˆõ', '0');
+
+/*Ğˆõƒe[ƒuƒ‹‚ÉƒŒƒR[ƒh‚ğ’Ç‰Á*/
+insert into employee values(seq_employee.nextval, '1111', '’†R', '‹Ø“÷', 'ƒiƒJƒ„ƒ}', 'ƒLƒ“ƒjƒN', '11111111111', '111', '1111', '“ú–ìs', '1', '0');
+insert into employee values(seq_employee.nextval, '2222', '‹Ø“÷', '‚·‚®‚é', 'ƒLƒ“ƒjƒN', 'ƒXƒOƒ‹', '22222222222', '222', '2222', 'ƒLƒ““÷¯', '2', '0');
+
+/**/
+alter table authority rename column authority_id to id;
+alter table employee add FOREIGN KEY(authority_id) references authority(id);
+
+/*
+ƒZ[ƒ‹ƒe[ƒuƒ‹‚Æ¤•iƒe[ƒuƒ‹ƒCƒ“ƒT[ƒg
+2021/12/17
+*/
+insert into info values(SEQ_INFO.nextval, 'ƒZ[ƒ‹‚â‚é‚æ', '2021/12/01~2021/12/31‚ÌŠÔƒZ[ƒ‹‚â‚è‚Ü[‚·', '2021/11/01', '2021/11/01', '2021/12/31', '0');
+
+insert into goods values(SEQ_GOODS.nextval, 'ƒWƒƒƒPƒbƒg', 'ƒWƒƒƒPƒbƒg', 300, '0');
+insert into goods values(SEQ_GOODS.nextval, '•z’c', 'ƒtƒgƒ“', 500, '0');
+insert into goods values(SEQ_GOODS.nextval, 'ƒ_ƒEƒ“', 'ƒ_ƒEƒ“', 300, '0');
+
+commit;
