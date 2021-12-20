@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.tymeleaf/org">
+    <head>
+    <link rel="stylesheet" th:href="@{/css/common.css}">
+    </head>
+    <body>
+        
+        <header id="header" th:fragment="header">
+        	<span id = "lbl_logo"><a href="/">スタークリーニング</a></span>
+        	<div style="position: absolute; top: 20px; left: 70px;">スター<br>クリーニング</div>
+	        <div style="background-color:#000; width:1px; height:100%; position:absolute; top:0px; left:170px;"></div>
+	        <div id = "lbl_dispTitle" style="position: absolute; top:20px; left: 190px; font-size: 25px;">商品履歴&nbsp;&nbsp;&nbsp;詳細画面</div>
+	        <div id = "lbl_userName" style = "position: absolute; top:10px; right: 50px; font-size:25px; color:#000;" th:text="${session.employeeNameSei} + ' ' + ${session.employeeNameMei}"></div>
+	        <div id = "lbl_logout" style = "position: absolute; top:50px; right: 50px; font-size:px; color:#000;"><a th:href="@{/logout}">ログアウト</a></div>
+	    </header>
+	    <div id="sidebar" th:fragment="sidebar" style="float: left; margin: 0;">
+			<h4 style="font-weight: lighter">メニュー</h4>
+			<ul id = lbl_menu>
+			  <li id = "lbl_inputMenu"><a href = "#">商品入力</a></li>
+			  <li id = "lbl_histMenu"><a href = "#">商品履歴</a></li>
+			  <li id = "lbl_infoMenu"><a th:href = "@{/showAllNews}">お知らせ</a></li>
+			</ul>
+			<h4 style="font-weight: lighter">メンテナンス</h4>
+			<ul id = lbl_mainteMenu>
+			  <li id = "lbl_goodsManageMenu"><a href = "#">商品管理</a></li>
+			  <li id = "lbl_infoManageMenu"><a href = "#">お知らせ管理</a></li>
+			  <li id = "lbl_empManageMenu"><a href = "#">社員管理</a></li>
+			  <li id = "lbl_custManageMenu"><a href = "#">顧客管理</a></li>
+			  <li id = "lbl_setManageMenu"><a href = "#">設定管理</a></li>
+			</ul>
+		</div>
+</body>
+</html>
