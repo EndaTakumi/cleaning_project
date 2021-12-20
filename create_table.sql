@@ -163,4 +163,24 @@ insert into goods values(SEQ_GOODS.nextval, 'ジャケット', 'ジャケット', 300, '0'
 insert into goods values(SEQ_GOODS.nextval, '布団', 'フトン', 500, '0');
 insert into goods values(SEQ_GOODS.nextval, 'ダウン', 'ダウン', 300, '0');
 
+/*
+お知らせテーブル1行挿入
+12/20
+*/
+insert into info values(SEQ_INFO.nextval, '年始セール！','2022/01/01~2022/01/05の間セールやりまーす','2021-12-25', '2022-01-01', '2022-01-05', '0');
+
+/*セールテーブル1行挿入
+12/20
+*/
+insert into sale values(SEQ_SALE.nextval, '全品5%OFF', 5, '2021-12-01', '2021-12-31', '0');
+insert into sale values(SEQ_SALE.nextval, '全品10%OFF', 10, '2021-11-01', '2021-11-30', '0');
+
+/*
+taxテーブル挿入
+12/20
+*/
+insert into tax values(10);
+
+
+
 commit;
