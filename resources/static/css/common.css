@@ -13,7 +13,7 @@ body {
   #header{
     border-bottom:solid 1.5px #000;
     height: 60px;
-    padding-top: 20px;
+    padding-bottom: 20px;
   }
   ul {
     list-style: none;
@@ -21,16 +21,18 @@ body {
   li { 
     margin-bottom: 10px;
     }
-    h5 {
-      float: left;
+    span {
       padding: 5px 0;
       margin: 0%;
     }
-    h5 a {
+    span a {
       display: block;
       width: 64px;
       height: 65px;
       font-size: 0;
-      background: url(../css/images/starsystem.png) left top/64px auto no-repeat;
+      background: url(../css/images/starsystem.png) left top 10px/60px auto no-repeat;
+    }
+    #sidebar{
+    	float: left;
     }
   

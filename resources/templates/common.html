@@ -6,17 +6,16 @@
     <body>
         
         <header id="header" th:fragment="header">
-        	<span id = "lbl_logo"><a href="/">スタークリーニング</a></span>
+        	<span id = "lbl_logo"><a th:href="@{/product_input}">スタークリーニング</a></span>
         	<div style="position: absolute; top: 20px; left: 70px;">スター<br>クリーニング</div>
 	        <div style="background-color:#000; width:1px; height:100%; position:absolute; top:0px; left:170px;"></div>
-	        <div id = "lbl_dispTitle" style="position: absolute; top:20px; left: 190px; font-size: 25px;">商品履歴&nbsp;&nbsp;&nbsp;詳細画面</div>
 	        <div id = "lbl_userName" style = "position: absolute; top:10px; right: 50px; font-size:25px; color:#000;" th:text="${session.employeeNameSei} + ' ' + ${session.employeeNameMei}"></div>
 	        <div id = "lbl_logout" style = "position: absolute; top:50px; right: 50px; font-size:px; color:#000;"><a th:href="@{/logout}">ログアウト</a></div>
 	    </header>
-	    <div id="sidebar" th:fragment="sidebar" style="float: left; margin: 0;">
+	    <div id="sidebar" th:fragment="sidebar">
 			<h4 style="font-weight: lighter">メニュー</h4>
 			<ul id = lbl_menu>
-			  <li id = "lbl_inputMenu"><a href = "#">商品入力</a></li>
+			  <li id = "lbl_inputMenu"><a th:href = "@{/product_input}">商品入力</a></li>
 			  <li id = "lbl_histMenu"><a href = "#">商品履歴</a></li>
 			  <li id = "lbl_infoMenu"><a th:href = "@{/showAllNews}">お知らせ</a></li>
 			</ul>
