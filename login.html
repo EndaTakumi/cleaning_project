@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<link rel="stylesheet" th:href="@{/css/style.css}">
+		<script th:if="${jsFlg} == '1'" th:src="@{/js/alert.js}" type="text/javascript"></script>
+	</head>
+	<body>
+	<div class="content">
+	<article>
+	  	<h1 class = "lbl_title" >クリーニングシステム</h1>
+		<div class="form">
+			<form th:action="@{/doLogin}" method="post" th:object="${loginFormValidation}">
+				<div class="lbl_userId">ユーザID</div>
+				<div class="txt_userId">
+					<input type="text" th:field="*{employeeId}" class="txt_userId maxlength="/>
+				</div>
+				<span class ="lbl_errormsg" th:errors="*{employeeId}"></span><br/>
+				<div class="lbl_userpw">パスワード</div>
+				<div class="txt_userpw">
+					<input type="password" th:field="*{employeePw}" class = txt_userpw />
+				</div>
+				<span class ="lbl_errormsg" th:errors="*{employeePw}"></span><br/>
+				<div class ="lbl_errormsg" th:if="${misMatchFlg} == '1'" th:text="IDかパスワードが異なります。再度入力してください。"></div>
+				<input type="submit" class = btn_login value="ログイン" />
+			</form>
+		</div>
+	</article>
+	</div>
+</body>
+</html>
