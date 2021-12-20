@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../static/css/product_admin_list.css">
+    </head>
+    <body>
+        <h3 id = "title">&nbsp;商品管理 一覧画面</h3>
+        <div id = "customerId">
+        <div id = lbl_customerId>商品ID</div>
+        <input type = "text" id = "txt_customerId" >
+        </div>
+        <div id ="customerNm">
+        <div id = "lbl_customerNm">商品名</div>
+        <input type= "text" id = "txt_customerNm">
+        <input type="button" id = "btn_search" value = "検索">
+        </div>    
+
+
+        <table border="1">
+            <tr>
+                <th>&nbsp;</th>
+                <th id = "tlbl_customerId">商品ID</th>
+                <th id = "tlbl_customerNm">商品名</th>
+                <th id ="tlbl_customerNm_kana">商品名カナ</th>
+                <th id ="tlbl_price">金額(単価)</th>
+            </tr>
+            <tr id = "one">
+                <td><input type ="checkbox" id = "check"></td>
+                <td><a href="lnk_detail_{1}">1</a></td>
+                <td id = "tlbl_customerNm_{1}"></td>
+                <td id = "tlbl_customerNm_kana_{1}"></td>
+                <td id = "tlbl_price_{1}"></td>
+            </tr>
+            <tr id = "two">
+                <td><input type ="checkbox" id = "check"></td>
+                <td><a href="lnk_detail_{2}">2</a></td>
+                <td id = "tlbl_customerNm_{2}"></td>
+                <td id = "tlbl_customerNm_kana_{2}"></td>
+                <td id = "tlbl_price_{2}"></td>
+            </tr>
+            <tr id = "three">
+                <td><input type ="checkbox" id = "check"></td>
+                <td><a href="lnk_detail_{3}">3</a></td>
+                <td id = "tlbl_customerNm_{3}"></td>
+                <td id = "tlbl_customerNm_kana_{3}"></td>
+                <td id = "tlbl_price_{3}"></td>
+            </tr>
+            <tr id = "four">
+                <td><input type ="checkbox" id = "check"></td>
+                <td><a href="lnk_detail_{4}">4</a></td>
+                <td id = "tlbl_customerNm_{4}"></td>
+                <td id = "tlbl_customerNm_kana_{4}"></td>
+                <td id = "tlbl_price_{4}"></td>
+            </tr>
+            <tr id = "five">
+                <td><input type ="checkbox" id = "check"></td>
+                <td><a href="lnk_detail_{5}">5</a></td>
+                <td id = "tlbl_customerNm_{5}"></td>
+                <td id = "tlbl_customerNm_kana_{5}"></td>
+                <td id = "tlbl_price_{5}"></td>
+            </tr>
+            <tr id = "six">
+                <td><input type ="checkbox" id = "check"></td>
+                <td><a href="lnk_detail_{6}">6</a></td>
+                <td id = "tlbl_customerNm_{6}"></td>
+                <td id = "tlbl_customerNm_kana_{6}"></td>
+                <td id = "tlbl_price_{6}"></td>
+            </tr>
+            <tr id = "seven">
+                <td><input type ="checkbox" id = "check"></td>
+                <td><a href="lnk_detail_{7}">7</a></td>
+                <td id = "tlbl_customerNm_{7}"></td>
+                <td id = "tlbl_customerNm_kana_{7}"></td>
+                <td id = "tlbl_price_{7}"></td>
+            </tr>
+ 
+
+        </table>
+            <input type="button" id ="btn_create" value="新規作成">
+            <input type ="button" id = "btn_update" value = "編集">
+            <input type ="button" id = "btn_delete" value = "削除">
+    </body>
+</html>
