@@ -10,14 +10,14 @@ input[type=submit] {
 	border-radius: 6px;
 
 }
-#btn_login{
+.btn_login{
 	background-color: blue;
 	color: white;
 }
 /* ---------------------------------------------------------------- *
 コンテンツコンテナの設定
 * ---------------------------------------------------------------- */
-#content {
+.content {
 height: 350px;
 width: 450px;
 position: absolute;
@@ -28,36 +28,35 @@ margin-left: -150px;
 background-color: white;
 text-align: center;
 }
-#lbl_title{
+.lbl_title{
 	padding: 10px;
 }
-#lbl_userId{
+.lbl_userId{
 	margin-right: 150px;
 	font-size: small;
 	color: #cccccc;
-
 }
-#lbl_userpw{
+.lbl_userpw{
 	margin-right: 140px;
 	font-size: small;
 	color: #cccccc;
 
 }
-#txt_userpw{
+.txt_userpw{
 	padding: 0px 1px;
 	margin: 0px;
 }
-input#txt_userId{
+input.txt_userId{
 	width: 200px;
-	height: 24px;
+	height: 22px;
 	margin: 5px;
 }
 
-input#txt_userpw{
+input.txt_userpw{
 	width: 200px;
 	height: 28px;
 	margin:5px
 }
-#lbl_errormsg{
+.lbl_errormsg{
 	color: red;
 }

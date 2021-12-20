@@ -1,0 +1,47 @@
+#custId{
+    float: left;
+    margin-right: 25px;
+}
+#lbl_custId{
+    font-size: small;
+    padding-left: 5px;
+}
+#custNm{
+    float: left;
+    margin-right: 25px;
+}
+#lbl_custNm{
+    font-size: small;
+    padding-left: 5px;
+}
+#lbl_keepNo{
+    font-size: small;
+}
+#lbl_buyDate{
+    font-size: small;
+    padding-left: 5px;
+}
+#txt_custId{
+    height: 20px;
+    width: 200px;
+}
+#txt_custNm{
+    height: 20px;
+    width: 200px;
+}
+#txt_keepNo{
+    height: 20px;
+    width: 100px;
+}
+#txt_buyDateFrom{
+    height: 20px;
+    width: 200px;
+}
+#txt_buyDateTo{
+    height: 20px;
+    width: 200px;
+}
+#btn_search{
+    width: 120px;
+}
+
