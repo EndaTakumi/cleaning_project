@@ -1,12 +1,24 @@
-body {
-    width: 300px;
-    border:1.5px solid #000;/* 枠線 */
-    box-sizing:border-box;
+#customerId{
+    float: left;
+    margin-left: 25px;
+    margin-right: 20px;
+}
+#lbl_customerId{
+    font-size: small;
+}
+#lbl_customerNm{
+    font-size: small;
+    margin-top: -2px;
+}
+#btn_search{
+    margin-left: 10px;
 }
 h3{
     border-bottom:solid 1.5px #000 ; 
     margin-top: 0px;
-    
+}
+a{
+    color: #000;
 }
 #one{
     background-color: #AAC4F2;
@@ -36,28 +48,28 @@ h3{
     background-color: #AAC4F2;
     border-color: #00000000;
 }
-#eight{
-    background-color: #DAE3F2;
-    border-color: #00000000;
-}
-#tlbl_custId{
+#tlbl_customerId{
     width: 70px;
     text-align: left;
     padding-left: 5px;
 }
-#tlbl_custNm{
-    width: 140px;
+#tlbl_customerNm{
+    width: 100px;
     text-align: left;
     padding-left: 5px;
+}
+#tlbl_customerNm_kana{
+    width: 100px;
+    text-align: left;
+}
+#tlbl_price{
+    width: 100px;
+    text-align: left;
 }
 th{
     border-color: #0059F2;
     background-color: #0059F2;
     color: #ffffff;
-}
-#lbl_custNm{
-    font-size: small;
-    margin-left: 20px;
 }
 #lbl_tellNo{
     font-size: small;
@@ -75,31 +87,47 @@ th{
     height: 18px;
 }
 #btn_search{
-    width: 50px;
+    width: 70px;
     height: 30px;
     color: #ffffff;
     background-color: #0059F2;
     border-color: #0059F2;
+    border-radius:5px;
 }
-#btn_close{
-    width: 80px;
-    margin-top: 15px;
+#btn_create{
+    width: 100px;
+    margin-top: 30px;
     margin-left: 20px;
     margin-bottom: 10px;
     padding: 5px;
     background-color: #0059F2;
     border-color: #0059F2;
     color: #ffffff;
+    border-radius:5px;
 }
-#btn_set{
-    width:80px;
-    margin-left: 70px;
+#btn_update{
+    width:100px;
+    margin-left: 75px;
     padding: 5px;
     background-color: #0059F2;
     border-color: #0059F2;
     color: #ffffff;
+    border-radius:5px;
+}
+#btn_delete{
+    width:100px;
+    margin-left: 75px;
+    padding: 5px;
+    background-color: #0059F2;
+    border-color: #0059F2;
+    color: #ffffff;
+    border-radius:5px;
 }
 table{
+    margin-top: 20px;
     margin-left: 20px;
-    border-color: #ffffff;
+    border-color: #00000000;
+}
+#check{
+    width: 45px;
 }
