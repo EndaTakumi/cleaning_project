@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../static/css/product_admin.css">
+    </head>
+    <body>
+        <!--仕様書には書かれていないが、詳細画面なので、入力不可を入れている-->
+        <!--lbl_price2は特に使う場所が見つからないため不使用-->
+        <h3 id = "title">&nbsp;商品管理 編集画面</h3>
+        <div id ="lbl_goodsId">商品ID</div>
+        <input type ="text" id ="txt_goodsId"/>
+
+        <div id ="lbl_goodsNm">商品名  <sup>※</sup></div>
+        <input type="text" id ="txt_goodsNm" />
+
+        <div id ="lbl_goodsNm_kana">商品名カナ <sup>※</sup></div>
+        <input type="text" id="txt_goodsNm_kana" />
+
+        <div id ="lbl_price">金額 <sup>※</sup></div>
+        <input type="text" id="txt_price" /> 円 (税抜き)
+
+        <br>
+        <input type="button" id ="btn_back" value="戻る">
+        <input type ="button" id = "btn_regist" value = "登録">
+    </body>
+</html>

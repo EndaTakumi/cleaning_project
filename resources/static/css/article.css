@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+#article{
+	float: left;
+	margin-left: 60px;
+	margin-top: 20px;
+	display: block;
+}
+
+#lbl_dispTitle{
+	position: absolute;
+	top:20px;
+	left: 190px;
+	font-size: 25px;
+}
