@@ -1,50 +1,29 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 	<head>
-		<link rel="stylesheet" th:href="@{/css/list.css}">
-        <!--<link rel="stylesheet" href="../static/css/list.css">-->
+        <link rel="stylesheet" th:href="@{/css/list.css}">
+        <link rel="stylesheet" th:href="@{/css/product.css}">
+        <link rel="stylesheet" th:href="@{/css/common.css}">
+        <link rel="stylesheet" th:href="@{/css/article.css}">
 	</head>
 	<body>
-        <table border="1">
-            <tr>
-                <th id = "tlbl_infoId">お知らせID</th>
-                <th id = "tlbl_subject">件名</th>
-                <th id = "tlbl_kaisaiPeriod">掲載期間</th>
-            </tr>
-            <tr id = "one">
-                <td><a href ="news_list_detail.html#lnk_detail_{1}">1</a></td>
-                <td id = "tlbl_subject_{1}">&nbsp;</td>
-                <td id = "tlbl_kaisaiPeriod_{1}">FROM-TO</td>
-            </tr>
-            <tr id = "two">
-                <td><a href ="news_list_detail.html#lnk_detail_{2}">2</a></td>
-                <td id = "tlbl_subject_{2}">&nbsp;</td>
-                <td id = "tlbl_kaisaiPeriod_{2}">&nbsp;</td>
-            </tr>
-            <tr id = "three">
-                <td><a href ="news_list_detail.html#lnk_detail_{3}">3</a></td>
-                <td id = "tlbl_subject_{3}">&nbsp;</td>
-                <td id = "tlbl_kaisaiPeriod_{3}">&nbsp;</td>
-            </tr>
-            <tr id = "four">
-                <td><a href ="news_list_detail.html#lnk_detail_{4}">4</a></td>
-                <td id = "tlbl_subject_{4}">&nbsp;</td>
-                <td id = "tlbl_kaisaiPeriod_{4}">&nbsp;</td>
-            </tr>
-            <tr id = "five">
-                <td><a href ="news_list_detail.html#lnk_detail_{5}">5</a></td>
-                <td id = "tlbl_subject_{5}">&nbsp;</td>
-                <td id = "tlbl_kaisaiPeriod_{5}">&nbsp;</td>
-            </tr>
-            <tr id = "six">
-                <td><a href ="news_list_detail.html#lnk_detail_{6}">6</a></td>
-                <td id = "tlbl_subject_{6}">&nbsp;</td>
-                <td id = "tlbl_kaisaiPeriod_{6}">&nbsp;</td>
-            </tr>
-            <tr id = "seven">
-                <td><a href ="news_list_detail.html#lnk_detail_{7}">7</a></td>
-                <td id = "tlbl_subject_{7}">&nbsp;</td>
-                <td id = "tlbl_kaisaiPeriod_{7}">&nbsp;</td>
-            </tr>
-        </table>
+		<!-- サイドバーとヘッダーの挿入 -->
+		<div th:replace="~{common :: header}"></div>
+    	<div th:replace="~{common :: sidebar}"></div>
+    	<!-- ここからメイン画面 -->
+    	<div id = "lbl_dispTitle">お知らせ&nbsp;&nbsp;&nbsp;一覧画面</div>
+    	<div id="article">
+	        <table border="1">
+	            <tr>
+	                <th id = "tlbl_infoId">お知らせID</th>
+	                <th id = "tlbl_subject">件名</th>
+	                <th id = "tlbl_kaisaiPeriod">掲載期間</th>
+	            </tr>
+	            <tr id = "one" th:each="news : ${newses}">
+	                <td><a th:href ="@{/showNewsDetail/} + ${news.infoId}" th:text="${news.infoId}"></a></td>
+	                <td id = "tlbl_subject_{1}" th:text="${news.subject}"></td>
+	                <td id = "tlbl_kaisaiPeriod_{1}" th:text="${#dates.format(news.keisaiFrom, 'yyyy/MM/dd')} + '-' + ${#dates.format(news.keisaiTo, 'yyyy/MM/dd')}"></td>
+	            </tr>
+	        </table>
+        </div>
     </body>

@@ -18,11 +18,11 @@ input[type=submit] {
 コンテンツコンテナの設定
 * ---------------------------------------------------------------- */
 .content {
-height: 350px;
+height: 400px;
 width: 450px;
 position: absolute;
-left: 50%;
-top: 50%;
+left: 45%;
+top: 45%;
 margin-top: -150px;
 margin-left: -150px;
 background-color: white;
@@ -35,12 +35,12 @@ text-align: center;
 	margin-right: 150px;
 	font-size: small;
 	color: #cccccc;
+
 }
 .lbl_userpw{
 	margin-right: 140px;
 	font-size: small;
 	color: #cccccc;
-
 }
 .txt_userpw{
 	padding: 0px 1px;
@@ -48,7 +48,7 @@ text-align: center;
 }
 input.txt_userId{
 	width: 200px;
-	height: 22px;
+	height: 24px;
 	margin: 5px;
 }
 

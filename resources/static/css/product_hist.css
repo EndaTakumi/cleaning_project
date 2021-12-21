@@ -1,4 +1,3 @@
-
 #custId{
     float: left;
     margin-right: 25px;
@@ -19,7 +18,6 @@
     font-size: small;
 }
 #lbl_buyDate{
-    margin-top: 10px;
     font-size: small;
     padding-left: 5px;
 }
@@ -42,71 +40,8 @@
 #txt_buyDateTo{
     height: 20px;
     width: 200px;
-    margin-right: 20px;
 }
 #btn_search{
-    width: 110px;
-    height: 30px;
-    background-color:#0059F2;
-    color: #ffffff;
-    border-radius:5px;
-    margin-bottom: 20px;
-}
-th{
-    border-color: #0059F2;
-    background-color: #0059F2;
-    color: #ffffff;
-   padding-bottom: 15px;
-}
-td a{
-    margin-left: auto;
-    margin-right: auto;
+    width: 120px;
 }
 
-#one{
-    background-color: #AAC4F2;
-    border-color: #00000000;
-}
-#two{
-    background-color: #DAE3F2;
-    border-color: #00000000;
-}
-#three{
-    background-color: #AAC4F2;
-    border-color: #00000000;
-}
-#four{
-    background-color: #DAE3F2;
-    border-color: #00000000;
-}
-#five{
-    background-color: #AAC4F2;
-    border-color: #00000000;
-}
-#six{
-    background-color: #DAE3F2;
-    border-color: #00000000;
-}
-#seven{
-    background-color: #AAC4F2;
-    border-color: #00000000;
-}
-#tlbl_keepNo{
-    width: 100px;
-    text-align: left;
-}
-#tlbl_buyDate{
-    width: 150px;
-    text-align: left;
-}
-#tlbl_custId{
-    width: 100px;
-    text-align: left;
-}
-#tlbl_custNm{
-    width: 150px;
-    text-align: left;
-}
-table{
-    border-color: #ffffff
-}

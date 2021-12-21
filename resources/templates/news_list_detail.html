@@ -1,26 +1,35 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 	<head>
-		<!--<link rel="stylesheet" th:href="@{/css/list.css}">-->
         <link rel="stylesheet" th:href="@{/css/list.css}">
+        <link rel="stylesheet" th:href="@{/css/product.css}">
+        <link rel="stylesheet" th:href="@{/css/common.css}">
+        <link rel="stylesheet" th:href="@{/css/article.css}">
 	</head>
 	<body>
+		<!-- サイドバーとヘッダーの挿入 -->
+		<div th:replace="~{common :: header}"></div>
+    	<div th:replace="~{common :: sidebar}"></div>
+    	<!-- ここからメイン画面 -->
+    	<div id = "lbl_dispTitle">お知らせ&nbsp;&nbsp;&nbsp;詳細画面</div>
+    	<div id="article">
             <div id = "lbl_infoId">お知らせID</div>
-            <input type="text" name="#"  id="txt_infoId" value = "1" disabled />
-            </div>
+            <input type="text" name="#"  id="txt_infoId" th:value = "${news.infoId}" disabled />
 
             <div id = "lbl_subjects">件名</div>
-            <input type="text" name ="#" id=txt_subject value="セールやるよ"disabled/>
+            <input type="text" name ="#" id=txt_subject th:value="${news.subject}" disabled/>
 
             <div id = "lbl_contents">内容</div>
-            <input type="textarea" name = "#" id=txt_contents value="2021/12/01～2021/12/31の間セールやりまーす" disabled/>
+            <input type="text" name = "#" id=txt_contents th:value="${news.contents}" disabled/>
 
             <div id = "lbl_infoPeriod">掲載期間</div>
-            <input type = "date" name="#" id="date_infoFrom" value="2021-11-01" disabled/>
+            <input type = "text" id="date_infoFrom" th:value="${#dates.format(news.keisaiFrom, 'yyyy/MM/dd')}" disabled/>
             <span>~</span>
-            <input type = "date" name="#" id="date_infoTo" value="2021-12-31" disabled/>
+            <input type = "text" id="date_infoTo" th:value="${#dates.format(news.keisaiTo, 'yyyy/MM/dd')}" disabled/>
 
-            
-            <div id = button></div>
-            <input type = "button" name "#" id=btn_back value="戻る" />
+            <br />
+            <form th:action="@{/showAllNews}">
+            	<input type = "submit" id=btn_back value="戻る" />
+            </form>
+        </div>
     </body>
