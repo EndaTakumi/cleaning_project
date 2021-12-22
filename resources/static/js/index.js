@@ -1,12 +1,9 @@
-function header(rootDir){
-    $.ajax({
-        url: rootDir + "templates/common.html",  // 読み込むHTMLファイル
-        cache: false,
-        async: false,
-        dataType: 'html',
-        success: function(html){
-            html = html.replace(/\{\$root\}/g, rootDir); //header.htmlの{$root}を置換
-            document.write(html);
-        }
-    });
+let window1;
+
+function search(){
+	window1 = window.open("customer_dia",null,"th:width=400px,th:height=550px,th:left=50px,scrollbars=yes");
+}
+
+function closed(){
+	window1.close();
 }

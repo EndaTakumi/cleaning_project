@@ -14,6 +14,7 @@ input#btn_search{
     color: #ffffff;
     background-color: #0059f2;
     width: 50px;
+    margin-bottom:5px;
 }
 #lbl_custNm{
    display:inline-block;
