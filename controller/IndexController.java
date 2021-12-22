@@ -166,12 +166,17 @@ public class IndexController {
 		
 		return "product_input_con";
 	}
-	/*確認画面から確定画面への遷移*/
+	/*確認画面から確定画面への遷移
+	 * 履歴テーブルと履歴詳細テーブルｎ*/
 	@RequestMapping("/product_success")
 	String showProductSuccess() {
 		return "product_success";
 	}
-	
+	/*商品入力画面から顧客選択するためのダイアログ表示*/
+	@RequestMapping("/customer_dia")
+	String searchCustomer() {
+		return "customer_dia";
+	}
 	
 	
 }
