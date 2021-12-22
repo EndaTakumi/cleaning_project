@@ -16,17 +16,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import jp.co.sss.project.entity.Goods;
+import jp.co.sss.project.entity.Tax;
 import jp.co.sss.project.form.LoginFormValidation;
 import jp.co.sss.project.form.ProductNumberList;
 import jp.co.sss.project.repository.CustomerRepository;
 import jp.co.sss.project.repository.EmployeeRepository;
 import jp.co.sss.project.repository.GoodsRepository;
 import jp.co.sss.project.repository.InfoRepository;
+import jp.co.sss.project.repository.SaleRepository;
+import jp.co.sss.project.repository.TaxRepository;
 
 @Controller
 public class IndexController {
 	
-	/*顧客レポジトリの宣言*/
+	/*レポジトリの宣言*/
 	@Autowired
 	EmployeeRepository employeerepository;
 	@Autowired
@@ -35,6 +38,10 @@ public class IndexController {
 	GoodsRepository goodsrepository;
 	@Autowired
 	CustomerRepository customerrepository;
+	@Autowired
+	TaxRepository taxrepository;
+	@Autowired
+	SaleRepository salerepository;
 	
 	/*トップページ（ログイン画面の表示）*/
 	@RequestMapping("/index")
@@ -57,6 +64,11 @@ public class IndexController {
 				session.setAttribute("employeeNameSei", employeerepository.findEmployeeNameSei(Integer.valueOf(form.getEmployeeId())));
 				session.setAttribute("employeeNameMei", employeerepository.findEmployeeNameMei(Integer.valueOf(form.getEmployeeId())));
 				model.addAttribute("goodses",goodsrepository.findAll());
+				List<Integer> list = new ArrayList<>();
+				for(int i = 0 ; i < 3 ; i++) {
+					list.add(0);
+				}
+				model.addAttribute("numbers", list);
 				return "product_input";
 			}
 			//一致しなかった場合
@@ -92,12 +104,25 @@ public class IndexController {
 	@RequestMapping("/product_input")
 	public String showProductInput(Model model) {
 		model.addAttribute("goodses",goodsrepository.findAll());
+		List<Integer> list = new ArrayList<>();
+		for(int i = 0 ; i < 3 ; i++) {
+			list.add(0);
+		}
+		model.addAttribute("numbers", list);
+		return "product_input";
+	}
+	/*商品入力画面に戻る*/
+	@RequestMapping("/product_input_return")
+	public String showProductInputReturn(Model model, ProductNumberList form, int id) {
+		model.addAttribute("goodses",goodsrepository.findAll());
+		model.addAttribute("numbers", form.getNumber());
+		model.addAttribute("id", id);
 		return "product_input";
 	}
 	/*商品入力画面から確認画面に遷移*/
-	@RequestMapping("/product_input_confirm")
-	public String showProductInputConfirm(Model model, ProductNumberList form, int customerId) {
-		model.addAttribute("customer", customerrepository.getOne(customerId));
+	@RequestMapping(path = "/product_input_confirm", params = "conf", method=RequestMethod.POST)
+	public String showProductInputConfirm(Model model, ProductNumberList form, int id) {
+		model.addAttribute("customer", customerrepository.getOne(id));
 		
 		/*商品を全件検索してリストに格納*/
 		List<Goods> goodsList = goodsrepository.findAll();
@@ -117,15 +142,36 @@ public class IndexController {
 		}
 		model.addAttribute("subTotal",subTotal);
 		
-		/* セールの額を計算
-		 * セールが複数ある場合も考慮
-		 * */
-		
+		/* セールの額を計算*/
+		int sale = 0;
+		//nullチェックしたい
+		int discount = salerepository.findDiscountBetween();
+		sale = subTotal * discount / 100;
+		model.addAttribute("sale", -sale);
 		/*
-		 * 消費税を計算*/
-		
+		 * 消費税を計算
+		 * 今回は10%なので、切り捨てなど考慮していない
+		 */
+		int tax = 0;
+		Tax t = new Tax();
+		t = taxrepository.getOne(1);
+		tax = subTotal * t.getTax() / 100;
+		model.addAttribute("tax", tax);
 		/*
-		 * 最終的な合計を計算*/
+		 * 最終的な合計を計算
+		 */
+		int total = 0;
+		total = subTotal - sale + tax;
+		model.addAttribute("total", total);
+		
 		return "product_input_con";
 	}
+	/*確認画面から確定画面への遷移*/
+	@RequestMapping("/product_success")
+	String showProductSuccess() {
+		return "product_success";
+	}
+	
+	
+	
 }
