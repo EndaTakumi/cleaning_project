@@ -1,78 +1,68 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
     <head>
-         <link rel="stylesheet" th:href="@{/css/product_con.css}">
+    	<script type="text/javascript" th:src="@{/js/product_input_con.js}"></script>
+    	<link rel="stylesheet" th:href="@{/css/product_con.css}">
+        <link rel="stylesheet" th:href="@{/css/product.css}">
+        <link rel="stylesheet" th:href="@{/css/common.css}">
+        <link rel="stylesheet" th:href="@{/css/article.css}">
     </head>
     <body>
-        <div id = "lbl_custNm">様</div>
-
-        <table border="1" id ="table1">
-            <tr>
-                <th id = "tlbl_goodsNm">商品名</th>
-                <th id = "tlbl_price">単価</th>
-                <th id = "tlbl_count">数量</th>
-                <th id = "tlbl_shoukei">小計</th>
-            </tr>
-            <tr id ="one">
-                <td id = "tlbl_goodsNm_{1}">&nbsp;</td>
-                <td id = "tlbl_price_{1}">&nbsp;</td>
-                <td id = "tlbl_count_{1}">&nbsp;</td>
-                <td id = "tlbl_shoukei_{1}">&nbsp;</td>
-            </tr>
-            <tr id ="two">
-                <td id = "tlbl_goodsNm_{2}">&nbsp;</td>
-                <td id = "tlbl_price_{2}">&nbsp;</td>
-                <td id = "tlbl_count_{2}">&nbsp;</td>
-                <td id = "tlbl_shoukei_{2}">&nbsp;</td>
-            </tr>
-            <tr id ="three">
-                <td id = "tlbl_goodsNm_{3}">&nbsp;</td>
-                <td id = "tlbl_price_{3}">&nbsp;</td>
-                <td id = "tlbl_count_{3}">&nbsp;</td>
-                <td id = "tlbl_shoukei_{3}">&nbsp;</td>
-            </tr>
-            <tr id ="four">
-                <td id = "tlbl_goodsNm_{4}">&nbsp;</td>
-                <td id = "tlbl_price_{4}">&nbsp;</td>
-                <td id = "tlbl_count_{4}">&nbsp;</td>
-                <td id = "tlbl_shoukei_{4}">&nbsp;</td>
-            </tr>
-            <tr id = "five">
-                <td id = "tlbl_goodsNm_{5}">&nbsp;</td>
-                <td id = "tlbl_price_{5}">&nbsp;</td>
-                <td id = "tlbl_count_{5}">&nbsp;</td>
-                <td id = "tlbl_shoukei_{5}">&nbsp;</td>
-            </tr>
-            <tr id = "six">
-                <td id = "tlbl_goodsNm_{6}">&nbsp;</td>
-                <td id = "tlbl_price_{6}">&nbsp;</td>
-                <td id = "tlbl_count_{6}">&nbsp;</td>
-                <td id = "tlbl_shoukei_{6}">&nbsp;</td>
-            </tr>
-            <tr id ="seven">
-                <td id = "tlbl_goodsNm_{7}">&nbsp;</td>
-                <td id = "tlbl_price_{7}">&nbsp;</td>
-                <td id = "tlbl_count_{7}">&nbsp;</td>
-                <td id = "tlbl_shoukei_{7}">&nbsp;</td>
-            </tr>
-        </table>
-
-        <table border="1" id ="table2">
-            <tr>
-                <th id ="tlbl_shoukeigoukei">小計合計</th>
-                <th id ="tlbl_saleDiscount">セール割引</th>
-                <th id ="tlbl_tax">消費税</th>
-                <th id ="tlbl_goukei">合計</th>
-            </tr>
-            <tr id = "ones">
-                <td id ="tlbl_shoukeigoukei_{1}">&nbsp;</td>
-                <td id ="tlbl_saleDiscount_{1}">&nbsp;</td>
-                <td id ="tlbl_tax_{1}">&nbsp;</td>
-                <td id ="tlbl_goukei_{1}">&nbsp;</td>
-            </tr>
-        </table>
-        <div id ="button"></div>
-        <input type ="button" id ="btn_back" value="戻る">
-        <input type ="button" id ="btn_regist" value ="確定">
+    	<!-- サイドバーとヘッダーの挿入 -->
+    	<div th:replace="~{common :: header}"></div>
+    	<div th:replace="~{common :: sidebar}"></div>
+    	<!-- ここからメイン画面 -->
+    	<div id = "lbl_dispTitle">商品入力確認画面</div>
+    	<div id = "article">
+        <div id = "lbl_custNm" th:text="${customer.customerNameSei} + ' ' + ${customer.customerNameMei}+ '様'"></div>
+		<form method="get" th:action="@{/product_input_return}">
+	        <table border="1" id ="table1">
+	            <tr>
+	                <th id = "tlbl_goodsNm">商品名</th>
+	                <th id = "tlbl_price">単価</th>
+	                <th id = "tlbl_count">数量</th>
+	                <th id = "tlbl_shoukei">小計</th>
+	            </tr>
+	            <tr th:each="i,st : ${#numbers.sequence(0,#lists.size(goodses)-1)}">
+	            	<th:block th:if="${st.even}">
+	            	<td th:text="${goodses[i].goodsName}" th:class="even"></td>
+	            	<td th:text="${goodses[i].price}" th:class="even"></td>
+	            	<td th:text="${numbers[i]}" th:class="even"></td>
+	            	<input type="hidden" th:value="${numbers[i]}" th:name="|number[${st.index}]|">
+	            	<td th:text="${subTotalList[i]}" th:class="even"></td>
+	            	</th:block>
+	            	<th:block th:if="${st.odd}">
+	            	<td th:text="${goodses[i].goodsName}" th:class="odd"></td>
+	            	<td th:text="${goodses[i].price}" th:class="odd"></td>
+	            	<td th:text="${numbers[i]}" th:class="odd"></td>
+	            	<input type="hidden" th:value="${numbers[i]}" th:name="|number[${st.index}]|">
+	            	<td th:text="${subTotalList[i]}" th:class="odd"></td>
+	            	</th:block>
+	            </tr>     
+	        </table>
+	
+	        <table border="1" id ="table2">
+	            <tr>
+	                <th id ="tlbl_shoukeigoukei">小計合計</th>
+	                <th id ="tlbl_saleDiscount">セール割引</th>
+	                <th id ="tlbl_tax">消費税</th>
+	                <th id ="tlbl_goukei">合計</th>
+	            </tr>
+	            <tr id = "ones">
+	                <td id ="tlbl_shoukeigoukei_{1}" th:text="'￥' + ${#numbers.formatInteger(subTotal,3,'COMMA')}"></td>
+	                <td id ="tlbl_saleDiscount_{1}" style="color: red;" th:text="'￥' + ${#numbers.formatInteger(sale,3,'COMMA')}"></td>
+	                <td id ="tlbl_tax_{1}" th:text="'￥' + ${#numbers.formatInteger(tax,3,'COMMA')}"></td>
+	                <td id ="tlbl_goukei_{1}" th:text="'￥' + ${#numbers.formatInteger(total,3,'COMMA')}"></td>
+	            </tr>
+	        </table>
+        	<div id ="button"></div>
+        	<input type="hidden" th:value="${customer.id}" name="id">
+        	<button type ="submit" id ="btn_back">戻る</button>
+        </form>
+        <button type ="submit" id ="btn_regist" onclick="conf()">確定</button>
+        <form method="post" th:action="@{/product_success}">
+        	<button type="submit" id="btn_regist_move" style="display:none;"></button>
+        </form>
+        </div>
     </body>
 </html>
