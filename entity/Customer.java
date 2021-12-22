@@ -14,7 +14,7 @@ public class Customer {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_customer_gen")
 	@SequenceGenerator(name = "seq_customer_gen", sequenceName = "seq_customer", allocationSize = 1)
-	private Integer customerId;
+	private Integer id;
 	
 	@Column
 	private String customerNameSei;
@@ -44,11 +44,11 @@ public class Customer {
 	private String deleteFlg;
 	
 	/*ゲッターとセッター*/
-	public Integer getCustomerId() {
-		return customerId;
+	public Integer getId() {
+		return id;
 	}
-	public void setCustomerId(Integer customerId) {
-		this.customerId = customerId;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 	public String getCustomerNameSei() {
 		return customerNameSei;
